@@ -1,0 +1,75 @@
+<html>
+
+
+<head>
+
+
+  <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+  <title>Crime Analysis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+</head>
+<style>
+  body {
+    background-image: url("http://localhost:5000/static/back.jpg");
+
+
+  }
+
+
+
+
+
+  .button {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+
+  .button5 {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+
+  }
+
+  .button5:hover {
+    background-color: #555555;
+    color: white;
+  }
+</style>
+
+<body>
+
+  <div style="text-align:center">
+    <img style="border:0"
+    src="{{ url_for('static', filename='logo.png') }}"
+      height="200px" width="200px" data-component="image" /><br></br><br></br>
+  </div>
+  <div style="text-align:center">
+    <h1>Specified crime has not occured</h1>
+  </div>
+
+
+
+
+  <div style="text-align:center"><a href="http://localhost:5000"><button type="submit" class="button button5"> Go
+        Back</button></a></div>
+</body>
+
+</html>

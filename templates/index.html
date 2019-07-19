@@ -1,0 +1,183 @@
+<HTML>
+
+<head>
+  <title>CRIME ANALYSIS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<style>
+  body {
+    background-image: url("http://localhost:5000/static/back.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+  }
+
+
+form {
+    display: inline-block;
+}
+ 
+
+
+  input[type=submit] {
+    width: 685px;
+    background-color: rgb(66, 152, 163);
+    color: white;
+    padding: 14px 0px;
+    margin: 20px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type=submit]:hover {
+    background-color: #00bfff;
+  }
+
+  input[type=text],
+  [type=number] {
+    width: 100%;
+    opacity: 0.75;
+    padding: 12px 20px;
+    align-content: center;
+    margin: 2px 0;
+    width: 685px;
+    background-color: rgb(138, 143, 143);
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+  }
+
+  select {
+    width: 100%;
+    padding: 12px 20px;
+    width: 685px;
+    margin: 2px 0;
+    background-color: rgb(138, 143, 143);
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    opacity: 0.75;
+  }
+
+  .sub {
+    width: 200px;
+    font-size: 15px;
+    -webkit-text-fill-color: black
+  }
+  .sub1 {
+    
+    font-size: 16px;
+    
+  }
+  label {
+    font-size: 15px;
+    
+  }
+
+ 
+
+  select:hover {
+    background-color: rgb(230, 229, 243);
+  }
+
+  input:hover {
+    background-color: rgb(230, 229, 243);
+    
+  }
+  .button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.button5 {
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+  
+}
+
+.button5:hover {
+  background-color: #555555;
+  color: white;
+}
+</style>
+
+<body>
+
+  <script type="text/javascript">
+    function validateForm() {
+     
+      var a = document.forms["form_90761174986469"]["offense_id"].value;
+     
+      var c = document.forms["form_90761174986469"]["lat"].value;
+      var d = document.forms["form_90761174986469"]["lon"].value;
+     
+      if (a == null || a == "" || isNaN(a) && c == null || c == "" || isNaN(c) && d == null || d == "" || isNaN(d)) {
+        alert("Verify Your Entry");
+        
+        return false;
+      }
+
+    }
+  </script>
+
+  <form name="form_90761174986469" id="90761174986469" onsubmit="return validateForm()" action="http://localhost:5000/result" method="post"  accept-charset="utf-8">
+
+ 
+      <img style="border:0"
+        src="{{ url_for('static', filename='logo.png') }}"
+        height="200px" width="200px" data-component="image" /><br></br><br></br>
+    
+     <pre> <label class="sub1" id="label_80" for="input_80"> Offense code   </label><input type="text" id="input_80" name="offense_code" class="sub" value=""/></pre>
+    <br>
+    <pre><label class="sub1" id="input_81" for="input_80">offense category </label><select name="offense_category_id" class="sub1" id="input_81">
+        <option value=13>traffic-accident</option>
+        <option value=9>public-disorder</option>
+        <option value=6>larceny</option>
+        <option value=12>theft-from-motor-vehicle</option>
+        <option value=5>drug-alcohol</option>
+        <option value=3>auto-theft</option>
+        <option value=4>burglary</option>
+        <option value=8>other-crimes-against-persons</option>
+        <option value=1>all-other-crimes</option>
+        <option value=2>arson</option>
+        <option value=0>aggravated-assault</option>
+        <option value=14>white-collar-crime</option>
+        <option value=7>murder</option>
+        <option value=10>robbery</option>
+      </select></pre>
+    <br>
+    <!-- </li> 
+      <li class="form-line" data-type="control_textbox" id="id_81">
+        <label class="form-label form-label-left form-label-auto" id="label_81" for="input_81"> Offense category id </label>
+        <div id="cid_81" class="form-input">
+          <input type="text" id="input_81" name="offense_category_id" data-type="input-textbox" class="form-textbox" size="20" value="" placeholder=" " data-component="textbox" />
+        </div>
+      </li> -->
+      <pre>   <label class="sub1" id="label_82" for="input_82"> Latitude </label>      <input type="text" id="input_82" name="geo_x" data-type="input-textbox" class="sub" value=""/><pre>
+    
+    <pre>   <label class="sub1" id="label_83" for="input_83"> Longitude</label>       <input type="text" id="input_83" name="geo_y" data-type="input-textbox" class="sub" value=""/></pre>
+    <br>
+ <button type="submit" class="button button5"> Submit</button>
+       
+     
+
+
+  </form>
+  
+</body>
+
+</HTML>
